@@ -1,0 +1,171 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mengatur tampilan Beranda untuk mobile */
+.beranda {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('../img/background.jpg') no-repeat center/cover;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box; /* Memastikan padding tidak mempengaruhi lebar kontainer */
+    width: 100%; /* Pastikan container mengambil 100% lebar layar */
+}
+.container-ber h1 {
+    font-size: 5vw; /* Ukuran font mengikuti lebar viewport */
+}
+
+.container-ber p {
+    font-size: 3vw; /* Ukuran font mengikuti lebar viewport */
+}
+.tentang {
+    height: auto;
+    padding: 40px 10px;
+}
+
+.img-container {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* Membuat tinggi sama dengan lebar (rasio 1:1) */
+    overflow: hidden; /* Gambar yang lebih besar akan terpotong */
+    border-radius: 10px; /* Opsional: untuk gambar dengan sudut melengkung */
+}
+
+/* Gambar di dalam container */
+.img-1x1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Memastikan gambar memenuhi container tanpa distorsi */
+}
+
+/* Menyesuaikan tampilan kontak untuk mobile */
+.kontak {
+    background: rgba(21, 41, 6, 0.9);
+    color: white;
+    padding: 30px 10px;
+}
+
+/* Teks kontak lebih kecil dan ditata untuk responsif */
+.kontak a {
+    color: aliceblue;
+    font-size: 1rem;
+    text-decoration: none;
+}
+hr {
+    border: none;
+    height: 2px;
+    background-color: rgb(255, 255, 255); /* Warna garis */
+    margin: 20px 0; /* Jarak atas dan bawah */
+}
+
+.credit{
+    padding-top: 25px;
+    font-size: 1rem;
+}
+.kontak a:hover {
+    color: #00fbff;
+}
+
+/* Membuat responsif untuk card pada section Tentang */
+.card {
+    margin-bottom: 20px;
+}
+
+.card h5 {
+    font-size: 1.1rem;
+}
+
+@media (min-width: 576px) {
+    .beranda {
+        padding: 50px;
+    }
+
+    .tentang {
+        padding: 60px;
+    }
+}
+
+@media (min-width: 992px) {
+    /* Menampilkan tombol di bagian atas pada layar besar */
+    .d-none.d-lg-flex {
+        display: flex;
+    }
+
+    /* Menyembunyikan tombol hamburger di layar besar */
+    .navbar-toggler {
+        display: none;
+    }
+} 
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    background: rgba(21, 41, 6, 0.9);
+    color: rgb(255, 255, 255);
+    margin-top: 20px;
+    border-radius: 50px 50px 0px 0px;
+    height: 100vh;
+}
+.carousel {
+    display: flex;
+    transition: transform 0.7s ease-in-out; /* Memperpanjang durasi transisi untuk smooth effect */
+    width: 300%;
+    /* padding: 50px;
+    min-width: 100%;
+    box-sizing: border-box; */
+}
+
+.car{
+    min-width: 100%;
+    padding: 50px;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+}
+.prev, .next {
+    position: absolute;
+    top: 10%;
+    transform: translateY(-50%);
+    background-color: rgb(255, 255, 255);
+    border: none;
+    padding: 5px 14px; /* Sesuaikan padding dengan button lainnya */
+    font-size: 18px; /* Sesuaikan ukuran font */
+    color: black; /* Ganti warna font agar lebih terlihat */
+    cursor: pointer;
+    z-index: 1;
+    border-radius: 100px;
+    box-shadow: 3px 3px 3px rgb(0, 0, 0);
+    margin-left: 10px; 
+    margin-right: 10px;
+}
+.prev:hover{
+    background-color: rgba(203, 203, 203, 0.944);
+}
+.next:hover{
+    background-color: rgba(203, 203, 203, 0.944);
+}
+.prev { 
+    left: 10px; 
+    margin: 1% 0% 0% 5%;
+}
+.next { 
+    right: 10px; 
+    margin: 1% 5% 0% 0%;
+}
+@media (max-width: 768px) {
+    .header {
+        font-size: 20px;
+    }
+    .button {
+        font-size: 16px;
+    }
+}

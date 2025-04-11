@@ -1,0 +1,1 @@
+CALL mkdocs build --clean --strict --use-directory-urls --site-dir ./.site

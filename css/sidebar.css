@@ -1,0 +1,98 @@
+/* Navbar */
+.navbar {
+    background: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+    background: rgba(21, 41, 6, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Gaya untuk link dalam navbar */
+.navbar-nav .nav-link {
+    color: white; /* Warna default untuk link navbar */
+    transition: color 0.3s ease; /* Efek transisi saat hover */
+}
+
+/* Warna navbar link saat hover */
+.navbar-nav .nav-link:hover {
+    color: #ffffff; /* Warna saat hover */
+}
+
+/* Gaya untuk ikon hamburger */
+.navbar-toggler {
+    color: #ffffff; /* Ganti warna garis hamburger menjadi putih */
+    border-radius: 5px; /* Menambahkan sedikit kelengkungan pada garis */
+    border: none; /* Menghilangkan border tombol */
+}
+
+/* Gaya saat hover ikon hamburger */
+.navbar-toggler:hover .navbar-toggler-icon {
+    background-color: #00ff66; /* Warna saat ikon hamburger dihover */
+}
+
+/* Mengubah warna ikon hamburger (ganti background dari garis) */
+.navbar-toggler .navbar-toggler-icon {
+    background-color: #ffffff; /* Garis hamburger menjadi putih */
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 55px;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    transition: right 0.3s ease, background-color 0.3s ease;
+    color: rgb(255, 255, 255);
+    padding: 20px;
+    backdrop-filter: blur(10px); /* Menambahkan efek blur */
+    -webkit-backdrop-filter: blur(10px); /* Untuk kompatibilitas di Safari */
+    z-index: 999; /* Menambahkan z-index agar sidebar tetap di atas */
+}
+
+.sidebar.open {
+    right: 0; /* Sidebar muncul */
+    background-color: rgba(21, 41, 6, 0.9); /* Warna transparan dengan sedikit warna */
+}
+
+.sidebar .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
+
+/* Gaya untuk link dalam sidebar */
+.sidebar a {
+    text-decoration: none; /* Menghapus underline pada link */
+    color: #ffffff; /* Warna link default */
+    transition: color 0.3s ease; /* Efek transisi saat hover */
+}
+
+/* Warna saat hover pada link di sidebar */
+.sidebar a:hover {
+    color: #0004ff; /* Ganti warna saat hover */
+}
+
+/* Sidebar pada layar kecil */
+@media (max-width: 767px) {
+    .sidebar {
+        width: 200px; /* Mengubah lebar sidebar menjadi 100% di layar kecil */
+        right: -100%; /* Menyembunyikan sidebar di luar layar */
+    }
+
+    .sidebar.open {
+        right: 0; /* Membuka sidebar di layar kecil */
+    }
+}
