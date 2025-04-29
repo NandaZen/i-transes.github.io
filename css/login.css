@@ -1,50 +1,99 @@
-/* Background Fullscreen */
+/* Fullscreen background */
 body {
-    background: url('../img/login-bg.jpg') no-repeat center center/cover;
+    background: url('../img/bekgron.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Container untuk login */
 .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    max-width: 400px;
-    padding: 20px;
+    height: 100%;
 }
 
-/* Box Form Login */
 .login-box {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding-bottom: 50px;
 }
 
-/* Form Input */
-.form-group {
-    margin-bottom: 15px;
+.login-box input{
+    background: transparent;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.338);
 }
 
-/* Tombol */
-.btn {
-    border-radius: 5px;
+.login-box input::placeholder{
+    color: rgb(196, 195, 195);
 }
 
-/* Link */
-p a {
-    text-decoration: none;
-    color: #007bff;
+h2 {
+    margin-bottom: 20px; /* Space between title and form */
 }
 
-p a:hover {
-    text-decoration: underline;
+.form-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
 
-/* Responsif untuk layar kecil */
+.form-column {
+    flex: 1;
+    margin-right: 30px;
+    margin-left: 10px;
+}
+
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
 @media (max-width: 768px) {
-    .login-container {
-        max-width: 90%;
+    .login-container{
+        margin: 5%;
+        max-width: 500px;
+        width: 90%;
+        max-height: 250px;
+        height: auto;
+    }
+    .login-box {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-column {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .image-container img {
+        max-width: 70%;
     }
 }

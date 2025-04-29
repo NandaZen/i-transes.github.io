@@ -1,42 +1,100 @@
-/* Background Fullscreen */
+/* Fullscreen background */
 body {
-    background: url('../img/signup-bg.jpg') no-repeat center center/cover;
+    background: url('../img/bekgron.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Container Sign Up */
 .signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    max-width: 400px;
-    padding: 20px;
+    height: 100%;
 }
 
-/* Box Form Sign Up */
 .signup-box {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
-/* Form Input */
-.form-group {
-    margin-bottom: 15px;
+.signup-box input {
+    background: rgb(250, 250, 250);
+    /* border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: rgb(0, 0, 0);
+    color: white !important; Menambahkan !important untuk memastikan gaya ini diutamakan */
 }
 
-/* Error Message */
-.error-message {
-    color: red;
-    font-size: 12px;
-    display: none;
+/* Untuk placeholder */
+.signup-box input::placeholder {
+    color: rgb(0, 0, 0) !important; /* Tambahkan !important di sini juga jika perlu */
 }
 
-/* Responsif untuk layar kecil */
+h2 {
+    margin-bottom: 20px; /* Space between title and form */
+}
+
+.form-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.form-column {
+    flex: 1;
+    margin-right: 30px;
+    margin-left: 10px;
+}
+
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
 @media (max-width: 768px) {
-    .signup-container {
-        max-width: 90%;
+    .signup-container{
+        margin: 5%;
+        max-width: 500px;
+        width: 90%;
+        max-height: 250px;
+        height: auto;
+    }
+    .signup-box {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-column {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .image-container img {
+        max-width: 70%;
     }
 }

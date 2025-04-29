@@ -1,9 +1,13 @@
 /* Navbar */
 .navbar {
+    height: 50px; /* tinggi tetap */
+    display: flex;
+    align-items: center;
     background: transparent;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     transition: background 0.3s ease, box-shadow 0.3s ease;
+    background-color: #154918;
 }
 
 .navbar.scrolled {
@@ -32,8 +36,8 @@
 }
 
 /* Gaya saat hover ikon hamburger */
-.navbar-toggler:hover .navbar-toggler-icon {
-    background-color: #00ff66; /* Warna saat ikon hamburger dihover */
+.navbar-toggler:hover {
+    color: #00ff66; /* Warna saat ikon hamburger dihover */
 }
 
 /* Mengubah warna ikon hamburger (ganti background dari garis) */
@@ -44,7 +48,7 @@
 /* Sidebar */
 .sidebar {
     position: fixed;
-    top: 55px;
+    top: 50px;
     right: -250px;
     width: 250px;
     height: 100%;
@@ -82,7 +86,7 @@
 
 /* Warna saat hover pada link di sidebar */
 .sidebar a:hover {
-    color: #0004ff; /* Ganti warna saat hover */
+    color: #00ff11; /* Ganti warna saat hover */
 }
 
 /* Sidebar pada layar kecil */

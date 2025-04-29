@@ -1,5 +1,5 @@
 
-html {
+body {
     scroll-behavior: smooth;
 }
 
@@ -10,28 +10,110 @@ html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url('../img/background.jpg') no-repeat center/cover;
+    background: url('../img/bekgron.jpg') no-repeat center/cover;
     color: white;
     padding: 10px;
     box-sizing: border-box; /* Memastikan padding tidak mempengaruhi lebar kontainer */
     width: 100%; /* Pastikan container mengambil 100% lebar layar */
 }
 .container-ber h1 {
-    font-size: 5vw; /* Ukuran font mengikuti lebar viewport */
+    /* font-size: 4vw; */
+    text-align: left;
+    padding-left: 5%;
+    padding-right: 10%;
 }
+
+.btn-wrapper {
+    /* font-size: 3vw; */
+    text-align: left;
+    padding-left: 5%;
+    padding-right: 10% ;
+    margin-top: 20px;
+}
+
+.container-ber a {
+    border-radius: 25px;
+    color: rgb(21, 255, 0);
+}
+
+.custom-outline-btn {
+    border: 2px solid rgb(21, 255, 0); /* warna outline */
+    color: rgb(21, 255, 0); /* warna teks */
+    background-color: transparent;
+    border-radius: 25px;
+    transition: 0.3s ease;
+}
+
+.custom-outline-btn:hover {
+    background-color: rgba(0, 0, 0, 0.389); /* warna latar saat hover */
+    color: rgb(106, 255, 0); /* warna teks saat hover */
+}
+
 
 .container-ber p {
     font-size: 3vw; /* Ukuran font mengikuti lebar viewport */
+
 }
+
 .tentang {
-    height: auto;
     padding: 40px 10px;
+  }
+  
+  .content-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  
+  .img-cont {
+    flex: 1 1 40%;
+    max-width: 200px;
+  }
+  
+  .img-cont img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .text-container {
+    flex: 1 1 55%;
+  }
+  
+/* 
+  .fitur-section {
+    margin-top: 40px;
+  }
+  
+  .fitur-section h3 {
+    font-size: 1.75rem;
+  }
+  
+  .fitur-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .fitur-list li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #333;
+  } */
+  
+/*   
+.dmapak{
+    padding: 40px 10px;
+}   */
+
+.dampak h2{
+    text-align: center;
 }
 
 .img-container {
     position: relative;
     width: 100%;
-    padding-top: 100%; /* Membuat tinggi sama dengan lebar (rasio 1:1) */
+    padding-top: 100%; /*Membuat tinggi sama dengan lebar (rasio 1:1) */
     overflow: hidden; /* Gambar yang lebih besar akan terpotong */
     border-radius: 10px; /* Opsional: untuk gambar dengan sudut melengkung */
 }
@@ -94,78 +176,165 @@ hr {
 }
 
 @media (min-width: 992px) {
-    /* Menampilkan tombol di bagian atas pada layar besar */
     .d-none.d-lg-flex {
         display: flex;
     }
 
-    /* Menyembunyikan tombol hamburger di layar besar */
     .navbar-toggler {
         display: none;
     }
 } 
+/* === CONTAINER CAROUSEL === */
 .carousel-container {
     display: flex;
     overflow: hidden;
     width: 100%;
     position: relative;
     background: rgba(21, 41, 6, 0.9);
-    color: rgb(255, 255, 255);
-    margin-top: 20px;
-    border-radius: 50px 50px 0px 0px;
-    height: 100vh;
-}
-.carousel {
-    display: flex;
-    transition: transform 0.7s ease-in-out; /* Memperpanjang durasi transisi untuk smooth effect */
-    width: 300%;
-    /* padding: 50px;
-    min-width: 100%;
-    box-sizing: border-box; */
+    color: white;
+    margin-top: 40px;
+    border-radius: 50px 50px 0 0;
+    padding-top: 20px;
 }
 
-.car{
-    min-width: 100%;
-    padding: 50px;
+.carousel {
+    display: flex;
+    transition: transform 0.7s ease-in-out;
+    width: 400%;
+    padding: 0 20px;
+}
+.car {
+    flex: 0 0 100%;
     box-sizing: border-box;
+    padding-bottom: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 250px;
+    text-align: center;
+  }
+  
+.car {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    padding-bottom: 20px;
     color: white;
     text-align: center;
 }
-.prev, .next {
+
+.car img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.car p {
+    font-size: 1rem;
+}
+
+.prev,
+.next {
     position: absolute;
-    top: 10%;
+    top: 50%;
     transform: translateY(-50%);
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     border: none;
-    padding: 5px 14px; /* Sesuaikan padding dengan button lainnya */
-    font-size: 18px; /* Sesuaikan ukuran font */
-    color: black; /* Ganti warna font agar lebih terlihat */
+    padding: 5px 14px;
+    font-size: 18px;
+    color: black;
     cursor: pointer;
-    z-index: 1;
+    z-index: 10;
     border-radius: 100px;
-    box-shadow: 3px 3px 3px rgb(0, 0, 0);
-    margin-left: 10px; 
-    margin-right: 10px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
 }
-.prev:hover{
+
+.prev:hover,
+.next:hover {
     background-color: rgba(203, 203, 203, 0.944);
 }
-.next:hover{
-    background-color: rgba(203, 203, 203, 0.944);
+
+.prev {
+    left: 20px;
+    margin-left: 5%;
 }
-.prev { 
-    left: 10px; 
-    margin: 1% 0% 0% 5%;
+
+.next {
+    right: 20px;
+    margin-right: 5%;
 }
-.next { 
-    right: 10px; 
-    margin: 1% 5% 0% 0%;
+
+section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === BAGIAN SPONSOR === */
+.sponsor {
+    background-color: rgba(21, 41, 6, 0.9);
+    color: white;
+}
+
+.sponsor .card {
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 10px;
+    gap: 5px;
+    color: white;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sponsor .placeholder {
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* === MEDIA QUERY RESPONSIF UNTUK MOBILE === */
 @media (max-width: 768px) {
+    .content-row {
+        flex-direction: column;
+        align-items: center;
+    }
     .header {
         font-size: 20px;
     }
+
     .button {
         font-size: 16px;
+    }
+
+    .car img {
+        width: 120px;
+    }
+
+    .car p {
+        font-size: 0.9rem;
+    }
+
+    .prev,
+    .next {
+        padding: 4px 10px;
+        font-size: 16px;
+    }
+
+    .carousel-container {
+        padding-top: 15px;
+        border-radius: 30px 30px 0 0;
     }
 }

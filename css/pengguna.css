@@ -1,0 +1,104 @@
+.navbar{
+  background: #218838;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+/* Mengatur tampilan Beranda untuk mobile */
+.beranda {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url('../img/bekgron.jpg') no-repeat center/cover;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.grafik{
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 26px;
+  color: #333;
+}
+
+/* FILTER DATE */
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.filter-container label {
+  font-weight: bold;
+  color: #333;
+  margin-right: 5px;
+}
+
+.filter-container input[type="date"] {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.filter-container button {
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.filter-container button:hover {
+  background-color: #218838;
+}
+
+/* GRAFIK */
+.kontainer-grafik {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+canvas {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .filter-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-container label {
+    margin-bottom: 5px;
+  }
+
+  .filter-container input,
+  .filter-container button {
+    width: 100%;
+  }
+}

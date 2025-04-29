@@ -1,0 +1,77 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#map {
+  height: calc(100vh - 50px);
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.lokasi-control {
+  position: fixed;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1050;
+  background: white;
+  border-radius: 12px;
+  padding: 8px 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.lokasi-control button {
+  font-size: 14px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.lokasi-control button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.result-box {
+  margin-top: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  position: absolute; 
+  top: 82%; 
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;  
+  width: 100%;
+}
+
+.result-box h5 {
+  padding-bottom: 10px;
+}
+
+.table {
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table-dark th {
+  background-color: #256b2d;
+  color: white;
+}
+
+@media (max-width: 576px) {
+  .lokasi-control {
+    flex-direction: column;
+    top: 80px;
+  }
+}

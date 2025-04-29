@@ -29,14 +29,21 @@ document.getElementById("signupForm").addEventListener("submit", function(event)
 
     // Validasi Password (minimal 6 karakter)
     if (password.length < 6) {
-        document.getElementById("passwordError").textContent = "Password minimal 6 karakter!";
+        document.getElementById("passwordError").textContent = "Kata Sandi minimal 6 karakter!";
+        document.getElementById("passwordError").style.display = "block";
+        isValid = false;
+    }
+
+    let passwordPattern = /[^A-Za-z0-9]/;
+    if (!passwordPattern.test(password)) {
+        document.getElementById("passwordError").textContent = "Kata Sandi harus mengandung 1 huruf kapital dan 1 angka";
         document.getElementById("passwordError").style.display = "block";
         isValid = false;
     }
 
     // Validasi Konfirmasi Password
     if (password !== confirmPassword) {
-        document.getElementById("confirmPasswordError").textContent = "Password tidak cocok!";
+        document.getElementById("confirmPasswordError").textContent = "Kata Sandi tidak cocok!";
         document.getElementById("confirmPasswordError").style.display = "block";
         isValid = false;
     }
