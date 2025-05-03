@@ -32,10 +32,8 @@ if (!isset($_SESSION['peran']) || !in_array($_SESSION['peran'], ['pengguna'])) {
 
 </head>
 <body>
-<!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
   <div class="container">
-      <!-- Toggle Sidebar Button -->
       <button class="navbar-toggler" type="button" id="toggleSidebar">
           <i class="fas fa-bars"></i>
       </button>
@@ -49,11 +47,11 @@ if (!isset($_SESSION['peran']) || !in_array($_SESSION['peran'], ['pengguna'])) {
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                       data-bs-toggle="dropdown" aria-expanded="false">Rekomendasi</a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="rekomendasi_perjalanan.php">Rekomendasi Perjalanan</a></li>
-                      <li><a class="dropdown-item" href="rekomendasi_kegiatan.php">Rekomendasi Kegiatan</a></li>
+                      <li><a class="dropdown-item" href="../rekomendasi/rekomendasi_perjalanan.php">Rekomendasi Perjalanan</a></li>
+                      <li><a class="dropdown-item" href="../rekomendasi/rekomendasi_kegiatan.php">Rekomendasi Kegiatan</a></li>
                   </ul>
               </li>
-              <li class="nav-item"><a class="nav-link" href="riwayat.php">Riwayat</a></li>
+              <li class="nav-item"><a class="nav-link" href="../riwayat/riwayat.php">Riwayat</a></li>
           </ul>
       </div>
       <div class="dropdown d-flex align-items-center">
@@ -88,7 +86,6 @@ if (!isset($_SESSION['peran']) || !in_array($_SESSION['peran'], ['pengguna'])) {
   <?php endif; ?>
 </div>
 
-<!-- Sidebar -->
 <div class="sidebar" id="sidebar">
   <button class="close-btn" id="closeSidebar">&times;</button>
   <ul>
@@ -98,25 +95,19 @@ if (!isset($_SESSION['peran']) || !in_array($_SESSION['peran'], ['pengguna'])) {
       <li>
           <a href="javascript:void(0)" class="nav-link" onclick="toggleSidebarDropdown()">Rekomendasi <i class="fas fa-caret-down"></i></a>
           <ul id="sidebarDropdown" style="display: none; list-style: none; padding-left: 15px;">
-              <li><a href="rekomendasi_perjalanan.php" class="nav-link">Rekomendasi Perjalanan</a></li>
-              <li><a href="rekomendasi_kegiatan.php" class="nav-link">Rekomendasi Kegiatan</a></li>
+              <li><a href="../rekomendasi/rekomendasi_perjalanan.php" class="nav-link">Rekomendasi Perjalanan</a></li>
+              <li><a href="../rekomendasi/rekomendasi_kegiatan.php" class="nav-link">Rekomendasi Kegiatan</a></li>
           </ul>
       </li>
-      <li><a href="riwayat.php" class="nav-link">Riwayat</a></li>
+      <li><a href="../riwayat/riwayat.php" class="nav-link">Riwayat</a></li>
   </ul>
 </div>
-
 <div class="chart">
     <div></div>
 </div>
 
-<div class="map-cont">
-    <div class="map">
-        <div id="map" style="border-radius: 25px; border: black 1px solid;"></div>
-    </div>
-</div>
-
 <section class="kendaraan">
+    <h2 class="fw-bold" style="color: black;">Pilih jenis kendaraan:</h2>
     <div class="pilih-kendaraan">
         <div class="mobil">
             <img src="../../img/mobil.png">
@@ -126,6 +117,12 @@ if (!isset($_SESSION['peran']) || !in_array($_SESSION['peran'], ['pengguna'])) {
         </div>
     </div>
 </section>
+
+<div class="map-cont">
+    <div class="map">
+        <div id="map" style="border-radius: 25px; border: black 1px solid;"></div>
+    </div>
+</div>
 
 <button id="tombolPilih" class="btn btn-success"></button>
 
@@ -196,20 +193,24 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     displayUserLocation();
 });
-const logoutButton = document.getElementById('logoutButton');
-
-logoutButton.addEventListener('click', function() {
+document.getElementById("logoutButton").addEventListener("click", function (e) {
+e.preventDefault();
 Swal.fire({
-  title: 'Yakin mau keluar?',
-  text: "Anda akan logout dari aplikasi.",
-  icon: 'warning',
-  showCancelButton: true,
-  confirmButtonText: 'Ya, keluar!',
-  cancelButtonText: 'Tidak, batalkan',
+  title: 'keluar dari Akun',
+  html: `
+    <p>Apakah anda yakin akan keluar?</p>
+    <img src="../../img/human.jpg" width="300" height="150" style="margin-top: 20px; border-radius:10px;">
+  `,
+  background: '#256020',
+  color: '#fff',
+  showDenyButton: true,
+  denyButtonText: 'Yakin banget!',
+  confirmButtonText: 'Enggak jadi deh..',
   reverseButtons: true,
-  confirmButtonColor: '#d33'
+  draggable: true,
+  confirmButtonColor: "#b4b4b4"
 }).then((result) => {
-  if (result.isConfirmed) {
+  if (result.isDenied) {
     window.location.href = "../masuk/proses_keluar.php";
   }
 });

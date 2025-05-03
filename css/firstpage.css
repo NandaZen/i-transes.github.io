@@ -3,7 +3,17 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Mengatur tampilan Beranda untuk mobile */
+.section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .beranda {
     height: 100vh;
     display: flex;
@@ -13,18 +23,16 @@ body {
     background: url('../img/bekgron.jpg') no-repeat center/cover;
     color: white;
     padding: 10px;
-    box-sizing: border-box; /* Memastikan padding tidak mempengaruhi lebar kontainer */
-    width: 100%; /* Pastikan container mengambil 100% lebar layar */
+    box-sizing: border-box; 
+    width: 100%;
 }
 .container-ber h1 {
-    /* font-size: 4vw; */
     text-align: left;
     padding-left: 5%;
     padding-right: 10%;
 }
 
 .btn-wrapper {
-    /* font-size: 3vw; */
     text-align: left;
     padding-left: 5%;
     padding-right: 10% ;
@@ -37,74 +45,138 @@ body {
 }
 
 .custom-outline-btn {
-    border: 2px solid rgb(21, 255, 0); /* warna outline */
-    color: rgb(21, 255, 0); /* warna teks */
+    border: 2px solid rgb(21, 255, 0);
+    color: rgb(21, 255, 0);
     background-color: transparent;
     border-radius: 25px;
     transition: 0.3s ease;
 }
 
 .custom-outline-btn:hover {
-    background-color: rgba(0, 0, 0, 0.389); /* warna latar saat hover */
-    color: rgb(106, 255, 0); /* warna teks saat hover */
+    background-color: rgba(0, 0, 0, 0.389); 
+    color: rgb(106, 255, 0); 
 }
 
 
 .container-ber p {
-    font-size: 3vw; /* Ukuran font mengikuti lebar viewport */
+    font-size: 3vw;
 
 }
 
 .tentang {
     padding: 40px 10px;
-  }
-  
-  .content-row {
+}
+
+.content-row {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     align-items: flex-start;
-  }
-  
-  .img-cont {
+}
+
+.img-cont {
     flex: 1 1 40%;
     max-width: 200px;
-  }
-  
-  .img-cont img {
+}
+
+.img-cont img {
     width: 100%;
     height: auto;
     border-radius: 10px;
-  }
-  
-  .text-container {
+}
+
+.text-container {
     flex: 1 1 55%;
+}
+
+.berita-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
   }
   
-/* 
-  .fitur-section {
-    margin-top: 40px;
+  .berita-card {
+    background: #b3b3b356;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 15px;
+    max-width:300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
   }
   
-  .fitur-section h3 {
-    font-size: 1.75rem;
+  .berita-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
   }
   
-  .fitur-list {
-    list-style: none;
-    padding: 0;
+  .berita-text {
+    width: 100%;
   }
   
-  .fitur-list li {
+  .berita-text h5 {
+    font-size: 18px;
+    color: #222;
     margin-bottom: 10px;
-    font-size: 1rem;
-    color: #333;
-  } */
+  }
   
-/*   
-.dmapak{
-    padding: 40px 10px;
-}   */
+  .berita-text p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .berita-text button {
+    align-self: center;
+  }
+  
+  /* Jika ukuran layar <= 768px, ubah jadi horizontal */
+  @media (max-width: 768px) {
+    .berita-card {
+      max-width: 800px;
+      flex-direction: row;
+      align-items: flex-start;
+      text-align: left;
+    }
+  
+    .berita-img {
+      width: 200px;
+      height: 150px;
+      margin-bottom: 0;
+      margin-right: 15px;
+      flex-shrink: 0;
+    }
+  
+    .berita-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  
+    .berita-text button {
+      align-self: flex-start;
+    }
+  }
+  
+.bg-dampak {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color:  rgba(21, 41, 6, 0.9);
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    z-index: 0;
+}
 
 .dampak h2{
     text-align: center;
@@ -113,29 +185,26 @@ body {
 .img-container {
     position: relative;
     width: 100%;
-    padding-top: 100%; /*Membuat tinggi sama dengan lebar (rasio 1:1) */
-    overflow: hidden; /* Gambar yang lebih besar akan terpotong */
-    border-radius: 10px; /* Opsional: untuk gambar dengan sudut melengkung */
+    padding-top: 100%; 
+    overflow: hidden; 
+    border-radius: 10px;
 }
 
-/* Gambar di dalam container */
 .img-1x1 {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Memastikan gambar memenuhi container tanpa distorsi */
+    object-fit: cover;
 }
 
-/* Menyesuaikan tampilan kontak untuk mobile */
 .kontak {
     background: rgba(21, 41, 6, 0.9);
     color: white;
     padding: 30px 10px;
 }
 
-/* Teks kontak lebih kecil dan ditata untuk responsif */
 .kontak a {
     color: aliceblue;
     font-size: 1rem;
@@ -144,8 +213,8 @@ body {
 hr {
     border: none;
     height: 2px;
-    background-color: rgb(255, 255, 255); /* Warna garis */
-    margin: 20px 0; /* Jarak atas dan bawah */
+    background-color: rgb(255, 255, 255);
+    margin: 20px 0;
 }
 
 .credit{
@@ -156,7 +225,6 @@ hr {
     color: #00fbff;
 }
 
-/* Membuat responsif untuk card pada section Tentang */
 .card {
     margin-bottom: 20px;
 }
@@ -165,69 +233,40 @@ hr {
     font-size: 1.1rem;
 }
 
-@media (min-width: 576px) {
-    .beranda {
-        padding: 50px;
-    }
-
-    .tentang {
-        padding: 60px;
-    }
-}
-
-@media (min-width: 992px) {
-    .d-none.d-lg-flex {
-        display: flex;
-    }
-
-    .navbar-toggler {
-        display: none;
-    }
-} 
-/* === CONTAINER CAROUSEL === */
 .carousel-container {
     display: flex;
     overflow: hidden;
     width: 100%;
     position: relative;
-    background: rgba(21, 41, 6, 0.9);
     color: white;
     margin-top: 40px;
-    border-radius: 50px 50px 0 0;
-    padding-top: 20px;
+    padding: 20px 0;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .carousel {
     display: flex;
-    transition: transform 0.7s ease-in-out;
-    width: 400%;
-    padding: 0 20px;
+    transition: transform 0.9s ease-in-out;
+    width: 100%;
 }
+
 .car {
     flex: 0 0 100%;
+    max-width: 100%;
     box-sizing: border-box;
-    padding-bottom: 20px;
-    color: white;
+    padding: 10px;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 250px;
-    text-align: center;
-  }
-  
-.car {
-    flex: 0 0 100%;
-    box-sizing: border-box;
-    padding-bottom: 20px;
-    color: white;
-    text-align: center;
 }
 
 .car img {
-    width: 150px;
+    width: 40%;
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 1rem;
 }
 
 .car p {
@@ -239,15 +278,19 @@ hr {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
     background-color: white;
     border: none;
-    padding: 5px 14px;
     font-size: 18px;
     color: black;
     cursor: pointer;
     z-index: 10;
     border-radius: 100px;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .prev:hover,
@@ -256,13 +299,11 @@ hr {
 }
 
 .prev {
-    left: 20px;
-    margin-left: 5%;
+    left: 50px;
 }
 
 .next {
-    right: 20px;
-    margin-right: 5%;
+    right: 50px;
 }
 
 section {
@@ -280,13 +321,12 @@ section.show {
     transform: translateY(0);
 }
 
-/* === BAGIAN SPONSOR === */
-.sponsor {
+.Donasi {
     background-color: rgba(21, 41, 6, 0.9);
     color: white;
 }
 
-.sponsor .card {
+.Donasi .card {
     position: relative;
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
@@ -298,14 +338,17 @@ section.show {
     transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-.sponsor .placeholder {
+.Donasi h2{
+    padding-bottom: 10px;
+}
+
+.Donasi .placeholder {
     background: rgba(0, 0, 0, 0);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* === MEDIA QUERY RESPONSIF UNTUK MOBILE === */
 @media (max-width: 768px) {
     .content-row {
         flex-direction: column;
@@ -326,15 +369,57 @@ section.show {
     .car p {
         font-size: 0.9rem;
     }
-
     .prev,
     .next {
         padding: 4px 10px;
         font-size: 16px;
+        width: 45px;
+        height: 45px;
     }
 
     .carousel-container {
         padding-top: 15px;
         border-radius: 30px 30px 0 0;
+    }
+}
+
+@media (min-width: 768px ) and (max-width: 1200px) {
+}
+
+@media (min-width: 768px) {
+    .car {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .car {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+    .prev,
+    .next {
+        display: none;
+    }
+}
+
+@media (min-width: 576px) {
+    .beranda {
+        padding: 50px;
+    }
+
+    .tentang {
+        padding: 60px;
+    }
+}
+
+@media (min-width: 992px) {
+    .d-none.d-lg-flex {
+        display: flex;
+    }
+
+    .navbar-toggler {
+        display: none;
     }
 }

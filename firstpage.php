@@ -47,7 +47,7 @@
     </div>
 
     <!-- Beranda Section -->
-    <section id="beranda" class="beranda">
+    <section id="beranda" class="beranda section py-5">
         <div class="container-ber text-center">
             <h1 class="fw-bold">Ketahui jumlah emisi karbon yang dihasilkan dan temukan solusi untuk menguranginya!</h1>
             <div class="btn-wrapper">
@@ -57,14 +57,14 @@
     </section>
 
     <!-- Tentang Section -->
-    <section id="tentang" class="tentang">
+    <section id="tentang" class="tentang section">
         <div class="container">
-          <h2 class="fw-bold text-left mb-4">Tentang Kami</h2>
+          <h2 class="fw-bold text-center mb-4">Tentang Kami</h2>
       
           <!-- Konten Tentang -->
           <div class="content-row">
             <div class="img-cont">
-              <img src="img/sponsor_2.jpg" alt="Ilustrasi Transportasi" />
+              <img src="img/I-TEC.png" alt="Logo I-TransEC" />
             </div>
             <div class="text-container">
               <p class="text-muted text-left">
@@ -76,50 +76,77 @@
               </p>
             </div>
           </div>
-      
-          <!-- Fitur Kami -->
-          <!-- <div class="fitur-section mt-5">
-            <h3 class="fw-bold text-center mb-3">Fitur yang kami sediakan!</h3>
-            <ul class="fitur-list text-center">
-              <li>Menghitung Emisi Perjalanan</li>
-              <li>Simulasi Perjalanan</li>
-              <li>Rekomendasi Transportasi Umum</li>
-              <li>Riwayat Perjalanan</li>
-            </ul>
-          </div> -->
-        </div>
-      </section>
-      
-    <section id="dampak" class="dampak">
-        <div class="container">
-            <h2 class="fw-bold"> Dampak baik dari menggurangi emisi karbon</h2>
         </div>
     </section>
+            
+    <section id="berita" class="berita-section py-5">
+        <div class="container">
+          <h3 class="section-title text-center mb-5 fw-bold">Berita Terkini!</h3>
+          <div class="berita-grid">
+
+            <div class="berita-card">
+              <img src="../../img/sponsor_2.jpg" alt="Berita 1" class="berita-img">
+              <div class="berita-text">
+                <h5 class="fw-bold">Berita 1</h5>
+                <p>Ini adalah isi singkat berita pertama yang menarik untuk dibaca.</p>
+                <button class="btn btn-outline-primary">Lihat</button>
+              </div>
+            </div>
+
+            <div class="berita-card">
+              <img src="../../img/sponsor_2.jpg" alt="Berita 2" class="berita-img">
+              <div class="berita-text">
+                <h5 class="fw-bold">Berita 2</h5>
+                <p>Ini adalah isi singkat berita kedua yang informatif dan terbaru.</p>
+                <button class="btn btn-outline-primary">Lihat</button>
+              </div>
+            </div>
+
+            <div class="berita-card">
+              <img src="../../img/I-TEC.png" alt="Berita 3" class="berita-img">
+              <div class="berita-text">
+                <h5 class="fw-bold">Berita 3</h5>
+                <p>Isi singkat berita ketiga, dengan informasi terkini yang bermanfaat.</p>
+                <button class="btn btn-outline-primary">Lihat</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      
+    <section id="dampak" class="dampak section">
+        <div class="bg-dampak"></div>
+        <div class="container">
+            <h2 class="fw-bold"> Dampak baik dari mengurangi emisi karbon</h2>
+        </div>
     
     <div class="carousel-container">
         <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
         <div class="carousel">
             <div class="car">
-              <img src="img/tanam.png" />
-              <p>Bumi menjadi hijau kembali</p>
+                <img src="img/tanam.png" />
+                <p>Bumi menjadi hijau kembali</p>
             </div>
             <div class="car">
-              <img src="img/tanam_4.svg" />
-              <p>Polusi udara berkurang dan atmosfer Bumi membaik.</p>
+                <img src="img/tanam_4.svg" />
+                <p>Polusi udara berkurang dan atmosfer Bumi membaik.</p>
             </div>
             <div class="car">
-              <img src="img/air.svg" />
-              <p>Kualitas dan sumber daya alam membaik.</p>
+                <img src="img/air.svg" />
+                <p>Kualitas dan sumber daya alam membaik.</p>
             </div>
             <div class="car">
-              <img src="img/macet.png" />
-              <p>Menggurangi Kemacetan</p>
+                <img src="img/macet.png" />
+                <p>Menggurangi Kemacetan</p>
             </div>
-          </div>
+        </div>
         <button class="next" onclick="moveSlide(1)">&#10095;</button>
     </div>
+    </section>
 
-    <section id="sponsor" class="sponsor">
+    <section id="Donasi" class="Donasi section">
     <div class="container">
         <h2 class="fw-bold text-left mb-2">Donasi</h2>
         <div class="row g-2 justify-content-center">
@@ -129,7 +156,7 @@
                     <div class="img-container">
                         <img src="img/sponsor_1.jpg" class="img-1x1">
                     </div>
-                        <p>Sponsor</p>
+                        <p>Donasi</p>
                         <button class="btn btn-outline-light">Lihat</button>
                     </div>
                 </div>
@@ -139,47 +166,47 @@
                          <div class="img-container">
                             <img src="img/sponsor_2.jpg" class="img-1x1">
                         </div>
-                        <p>Sponsor</p>
+                        <p>Donasi</p>
                         <button class="btn btn-outline-light">Lihat</button>
                     </div>
                 </div>
                 <div class="col-xxl-2 col-lg-4 col-md-6">
                     <div class="card p-3 text-center">
-                        <h5 class="fw-bold">Sponsor 3</h5>
+                        <h5 class="fw-bold">Donasi 3</h5>
                          <div class="img-container">
                             <img src="img/sponsor_3.jpg" class="img-1x1">
                         </div>
-                        <p>Sponsor</p>
+                        <p>Donasi</p>
                         <button class="btn btn-outline-light">Lihat</button>
                     </div>
                 </div>
                 <div class="col-xxl-2 col-lg-4 col-md-6">
                     <div class="card p-3 text-center">
-                        <h5 class="fw-bold">Sponsor 4</h5>
+                        <h5 class="fw-bold">Donasi 4</h5>
                         <div class="img-container">
                             <img src="img/sponsor_1.jpg" class="img-1x1">
                         </div>
-                        <p>Sponsor</p>
+                        <p>Donasi</p>
                         <button class="btn btn-outline-light">Lihat</button>
                     </div>
                 </div>
                 <div class="col-xxl-2 col-lg-4 col-md-6">
                     <div class="card p-3 text-center">
-                        <h5 class="fw-bold">Sponsor 5</h5>
+                        <h5 class="fw-bold">Donasi 5</h5>
                         <div class="img-container">
                             <img src="img/sponsor_1.jpg" class="img-1x1">
                         </div>
-                        <p>Sponsor</p>
+                        <p>Donasi</p>
                         <button class="btn btn-outline-light">Lihat</button>
                     </div>
                 </div>
                 <div class="col-xxl-2 col-lg-4 col-md-6">
                     <div class="card p-3 text-center">
-                        <h5 class="fw-bold">Sponsor 6</h5>
+                        <h5 class="fw-bold">Donasi 6</h5>
                         <div class="img-container">
                             <img src="img/sponsor_1.jpg" class="img-1x1">
                         </div>
-                        <p>Sponsor</p>
+                        <p>Donasi</p>
                         <button class="btn btn-outline-light">Lihat</button>
                     </div>
                 </div>
@@ -188,9 +215,8 @@
         </div>
     </section>
 
-
     <!-- Kontak Section -->
-    <section id="kontak" class="kontak">
+    <section id="kontak" class="kontak section">
         <div class="container text-left">
             <h2 class="fw-bold mb-4">Kontak Kami</h2>
             <p>Silakan hubungi kami melalui:</p>

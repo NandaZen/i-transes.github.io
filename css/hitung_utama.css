@@ -12,6 +12,16 @@
     margin-right: 10px;
 }
 
+.kendaraan {
+    z-index: 10;
+    position: relative;
+}
+
+.kendaraan h2{
+    padding-top: 60px;
+    left: 50px;
+}
+
 .pilih-kendaraan {
     display: flex;
     justify-content: center;

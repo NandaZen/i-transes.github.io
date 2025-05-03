@@ -27,15 +27,12 @@ if (!isset($_SESSION['peran']) || !in_array($_SESSION['peran'], ['admin'])) {
     <link rel="stylesheet" href="../../css/pengguna.css">
     <link rel="stylesheet" href="../../css/sidebar_pengguna.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.16/dist/sweetalert2.min.css" rel="stylesheet">
 
 </head>
 <body>
-<!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
   <div class="container">
-      <!-- Toggle Sidebar Button -->
       <button class="navbar-toggler" type="button" id="toggleSidebar">
           <i class="fas fa-bars"></i>
       </button>
@@ -43,29 +40,31 @@ if (!isset($_SESSION['peran']) || !in_array($_SESSION['peran'], ['admin'])) {
       <div class="collapse navbar-collapse justify-content-end">
           <ul class="navbar-nav me-auto">
               <li class="nav-item"><a class="nav-link" href="pengguna.php">Beranda</a></li>
-              <li class="nav-item"><a class="nav-link" href="../hitung.html">Hitung Emisi</a></li>
-              <li class="nav-item"><a class="nav-link" href="../simulasi.html">Simulasi Perjalanan</a></li>
+              <li class="nav-item"><a class="nav-link" href="../hitung/hitung.php">Hitung Emisi</a></li>
+              <li class="nav-item"><a class="nav-link" href="../simulais/simulasi.php">Simulasi Perjalanan</a></li>
               <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                       data-bs-toggle="dropdown" aria-expanded="false">Rekomendasi</a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="../rekomendasi_perjalanan.html">Rekomendasi Perjalanan</a></li>
-                      <li><a class="dropdown-item" href="../rekomendasi_kegiatan.html">Rekomendasi Kegiatan</a></li>
+                      <li><a class="dropdown-item" href="../rekomendasi_perjalanan.php">Rekomendasi Perjalanan</a></li>
+                      <li><a class="dropdown-item" href="../rekomendasi_kegiatan.php">Rekomendasi Kegiatan</a></li>
                   </ul>
               </li>
-              <li class="nav-item"><a class="nav-link" href="../riwayat.html">Riwayat</a></li>
+              <li class="nav-item"><a class="nav-link" href="../riwayat.php">Riwayat</a></li>
           </ul>
       </div>
-
-      <div class="dropdown">
+      <div class="dropdown d-flex align-items-center">
+      <?php if (isset($_SESSION['nama'])): ?>
+        <span class="text-white me-2 fw-semibold"><?php echo $_SESSION['nama']; ?></span>
+      <?php endif; ?>
         <button class="btn profile ms-2 dropdown-toggle" id="profile" title="Profil" data-bs-toggle="dropdown" aria-expanded="false">
           <i class="fas fa-user-circle fa-lg"></i>
         </button>
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
-          <li><a class="dropdown-item" href="../kelola/kelola_akun.php">Kelola Akun</a></li>
-          <li><hr class="dropdown-divider"></li>
-          <li><button class="dropdown-item" id="logoutButton"><a href="../../firstpage.php">Keluar</a></button></li>
-        </ul>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile">
+            <li><a class="dropdown-item" href="../kelola/kelola_akun.php">Kelola Akun</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><button class="dropdown-item" id="logoutButton">Keluar</button></li>
+          </ul>
       </div>
   </div>
 </nav>
@@ -86,39 +85,36 @@ if (!isset($_SESSION['peran']) || !in_array($_SESSION['peran'], ['admin'])) {
   <?php endif; ?>
 </div>
 
-
-<!-- Sidebar -->
 <div class="sidebar" id="sidebar">
   <button class="close-btn" id="closeSidebar">&times;</button>
   <ul>
       <li><a href="pengguna.php" class="nav-link">Beranda</a></li>
-      <li><a href="hitung.html" class="nav-link">Hitung Emisi</a></li>
-      <li><a href="simulasi.html" class="nav-link">Simulasi Perjalanan</a></li>
+      <li><a href="../hitung/hitung.php" class="nav-link">Hitung Emisi</a></li>
+      <li><a href="../simulasi/simulasi.php" class="nav-link">Simulasi Perjalanan</a></li>
       <li>
           <a href="javascript:void(0)" class="nav-link" onclick="toggleSidebarDropdown()">Rekomendasi <i class="fas fa-caret-down"></i></a>
           <ul id="sidebarDropdown" style="display: none; list-style: none; padding-left: 15px;">
-              <li><a href="rekomendasi_perjalanan.html" class="nav-link">Rekomendasi Perjalanan</a></li>
-              <li><a href="rekomendasi_kegiatan.html" class="nav-link">Rekomendasi Kegiatan</a></li>
+              <li><a href="../rekomendasi_perjalanan.php" class="nav-link">Rekomendasi Perjalanan</a></li>
+              <li><a href="../rekomendasi_kegiatan.php" class="nav-link">Rekomendasi Kegiatan</a></li>
           </ul>
       </li>
-      <li><a href="riwayat.html" class="nav-link">Riwayat</a></li>
+      <li><a href="../riwayat.php" class="nav-link">Riwayat</a></li>
   </ul>
 </div>
-
-    <!-- Beranda Section -->
     <section id="beranda" class="beranda">
         <div class="container-ber text-center">
-            <h1 class="fw-bold">Selamat Datang di <span style="color: red;">I-TransEC</span></h1>
+            <h1 class="fw-bold">Selamat Datang, <?php if (isset($_SESSION['nama'])): ?>
+        <span class="text-danger me-2 fw-bold"><?php echo $_SESSION['nama']; ?>!</span>
+      <?php endif; ?></h1>
             <p class="lead">Aplikasi untuk menghitung emisi karbon kendaraan</p>
-            <a href="hitung.html" class="btn me-2" style="background-color: rgb(21, 61, 17); color: white; ">Hitung</a>
+            <a href="hitung.php" class="btn me-2" style="background-color: rgb(21, 61, 17); color: white; ">Hitung</a>
         </div>
     </section>
 
     <section id="grafik" class="grafik">
         <div class="grafik">
           <h2 class="fw-bold">Grafik Perjalanan!</h2>
-      
-          <!-- Filter Kalender -->
+
           <div class="filter-container mb-4">
             <label for="tanggalAwal" class="fw-semibold">Tanggal Awal:</label>
             <input type="date" id="tanggalAwal" class="form-control d-inline-block me-2" style="max-width: 200px;">
@@ -129,7 +125,6 @@ if (!isset($_SESSION['peran']) || !in_array($_SESSION['peran'], ['admin'])) {
             <button id="terapkanFilter" class="btn btn-success">Terapkan</button>
           </div>
 
-          <!-- Chart -->
           <div class="kontainer-grafik">
             <canvas id="myChart" style="width:100%;max-width:900px"></canvas>
           </div>
@@ -195,7 +190,6 @@ function getRandomColor() {
   return colors[Math.floor(Math.random() * colors.length)];
 }
 
-// Saat halaman dibuka, langsung ambil data 7 hari terakhir
 window.onload = function () {
   const now = new Date();
   const akhir = now.toISOString().split("T")[0];
@@ -204,11 +198,9 @@ window.onload = function () {
   awalDate.setDate(now.getDate() - 6);
   const awal = awalDate.toISOString().split("T")[0];
 
-  // Set nilai default ke input
   document.getElementById("tanggalAwal").value = awal;
   document.getElementById("tanggalAkhir").value = akhir;
 
-  // Ambil data default
   ambilData(awal, akhir);
 };
 
@@ -220,7 +212,7 @@ setTimeout(function() {
     }
   }, 3000);
 document.getElementById("logoutButton").addEventListener("click", function (e) {
-e.preventDefault(); // Mencegah link default
+e.preventDefault();
 Swal.fire({
   title: 'Yakin mau keluar?',
   text: "Anda akan logout dari aplikasi.",
@@ -228,10 +220,11 @@ Swal.fire({
   showCancelButton: true,
   confirmButtonText: 'Ya, keluar!',
   cancelButtonText: 'Tidak, batalkan',
-  reverseButtons: true
+  reverseButtons: true,
+  confirmButtonColor: '#d33'
 }).then((result) => {
   if (result.isConfirmed) {
-    window.location.href = "../../firstpage.php"; // Redirect ke halaman keluar
+    window.location.href = "../masuk/proses_keluar.php";
   }
 });
 });
