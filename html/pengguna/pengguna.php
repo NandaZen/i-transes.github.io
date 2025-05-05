@@ -110,7 +110,7 @@ if (!isset($_SESSION['peran']) || !in_array($_SESSION['peran'], ['pengguna'])) {
           </span>
         </h1>
           <p class="lead">Aplikasi untuk menghitung emisi karbon kendaraan</p>
-          <a href="hitung.php" class="btn me-2" style="background-color: rgb(21, 61, 17); color: white; ">Hitung</a>
+          <a href="../hitung/hitung.php" class="btn me-2" style="background-color: rgb(21, 61, 17); color: white; ">Hitung</a>
         </div>
     </section>
 

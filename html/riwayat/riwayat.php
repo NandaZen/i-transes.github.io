@@ -8,7 +8,20 @@ if (!isset($_SESSION['peran']) || !in_array($_SESSION['peran'], ['pengguna'])) {
     header("Location: ../masuk/masuk.php");
     exit();
 }
+$email = $_SESSION['email'] ?? null;
+$data = [];
 
+if ($email) {
+    $query = "SELECT jarak_km, tanggal, hasil_emisi FROM perjalanan WHERE email = ?";
+    $stmt = $koneksi->prepare($query);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    
+    while ($row = $result->fetch_assoc()) {
+        $data[] = $row;
+    }
+}    
 ?>
 
 <!DOCTYPE html>
@@ -20,11 +33,11 @@ if (!isset($_SESSION['peran']) || !in_array($_SESSION['peran'], ['pengguna'])) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/sidebar_pengguna.css">
-    <link rel="stylesheet" href="../../css/rek_per.css">
+    <link rel="stylesheet" href="../../css/riwayat.css">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.16/dist/sweetalert2.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 </head>
-<body>
+<body class="pt-5">
 <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
     <div class="container">
         <button class="navbar-toggler" type="button" id="toggleSidebar">
@@ -96,10 +109,50 @@ if (!isset($_SESSION['peran']) || !in_array($_SESSION['peran'], ['pengguna'])) {
     </ul>
 </div>
 
-          
+<div class="container-fluid" >
+    <!-- Content -->
+    <div class="content py-4">
+      <h2 style="margin-left: 100px;">Riwayat Perjalnan Anda:</h2>
+
+      <!-- Table -->
+      <div class="table-responsive" style="padding-top: 20px; margin-left: 100px; margin-right: 100px;">
+        <table id="data-table" class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Jarak</th>
+              <th>Tanggal</th>
+              <th>Total Emisi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php foreach ($data as $d):?>
+            <tr>
+              <td><?= $d['jarak_km'];?></td>
+              <td><?= $d['tanggal'];?></td>
+              <td><?= $d['hasil_emisi'];?></td>
+            </tr>
+            <?php endforeach;?>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.16/dist/sweetalert2.all.min.js"></script>
 <script src="../../js/sidebar_pengguna.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    $('#data-table').DataTable({
+      language: {
+        url: "//cdn.datatables.net/plug-ins/1.13.6/i18n/id.json"
+      }
+    });
+  });
+</script>
 <script>
     document.getElementById("logoutButton").addEventListener("click", function (e) {
         e.preventDefault();
