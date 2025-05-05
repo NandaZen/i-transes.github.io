@@ -4,4 +4,56 @@
     border-radius: 15px;
     border: 2px solid #333;
   }
+  .kegiatan-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
   
+  .kegiatan-card {
+    background: #b3b3b356;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    padding: 15px;
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: row; /* Ubah ke horizontal secara default */
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .kegiatan-img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 0;
+    margin-right: 15px;
+    flex-shrink: 0;
+  }
+  
+  .kegiatan-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .kegiatan-text h5 {
+    font-size: 18px;
+    color: #222;
+    margin-bottom: 10px;
+  }
+  
+  .kegiatan-text p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .kegiatan-text button {
+    align-self: flex-start;
+  }

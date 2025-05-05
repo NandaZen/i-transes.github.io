@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-omnivore/leaflet-omnivore.min.js"></script>
+</head>
+<body>
+    <div id="map" style="height: 80vh; width: 100%;"></div>
+
+    <script>
+    const map = L.map('map').setView([1.0596, 104.0191], 13);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // ganti 'Corridor.kml' sesuai nama file kamu
+    omnivore.kml('Corridor.kml').addTo(map);
+    </script>
+</body>
+</html>

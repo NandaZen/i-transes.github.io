@@ -17,10 +17,13 @@
     position: relative;
 }
 
-.kendaraan h2{
-    padding-top: 60px;
-    left: 50px;
+.text-pilih {
+    position: relative;
+    z-index: 20;
+    color: black;
+    padding-left: 100px;
 }
+
 
 .pilih-kendaraan {
     display: flex;

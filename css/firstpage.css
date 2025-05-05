@@ -306,21 +306,6 @@ hr {
     right: 50px;
 }
 
-section {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 1s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-section.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 .Donasi {
     background-color: rgba(21, 41, 6, 0.9);
     color: white;

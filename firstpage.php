@@ -85,7 +85,7 @@
           <div class="berita-grid">
 
             <div class="berita-card">
-              <img src="../../img/sponsor_2.jpg" alt="Berita 1" class="berita-img">
+              <img src="img/sponsor_2.jpg" alt="Berita 1" class="berita-img">
               <div class="berita-text">
                 <h5 class="fw-bold">Berita 1</h5>
                 <p>Ini adalah isi singkat berita pertama yang menarik untuk dibaca.</p>
@@ -94,7 +94,7 @@
             </div>
 
             <div class="berita-card">
-              <img src="../../img/sponsor_2.jpg" alt="Berita 2" class="berita-img">
+              <img src="img/sponsor_2.jpg" alt="Berita 2" class="berita-img">
               <div class="berita-text">
                 <h5 class="fw-bold">Berita 2</h5>
                 <p>Ini adalah isi singkat berita kedua yang informatif dan terbaru.</p>
@@ -103,7 +103,7 @@
             </div>
 
             <div class="berita-card">
-              <img src="../../img/I-TEC.png" alt="Berita 3" class="berita-img">
+              <img src="img/I-TEC.png" alt="Berita 3" class="berita-img">
               <div class="berita-text">
                 <h5 class="fw-bold">Berita 3</h5>
                 <p>Isi singkat berita ketiga, dengan informasi terkini yang bermanfaat.</p>

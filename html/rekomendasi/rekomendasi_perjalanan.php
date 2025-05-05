@@ -96,13 +96,11 @@ if (!isset($_SESSION['peran']) || !in_array($_SESSION['peran'], ['pengguna'])) {
     </ul>
 </div>
 
-    
     <div class="map-tb">
         <iframe src="https://www.google.com/maps/d/embed?mid=1YsIbrT0lcckAWC0RlwUQtzhf2kw&ehbc=2E312F" width="640" height="480"></iframe>
     </div>
-    
-          
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.16/dist/sweetalert2.all.min.js"></script>
 <script src="../../js/sidebar_pengguna.js"></script>
 <script>

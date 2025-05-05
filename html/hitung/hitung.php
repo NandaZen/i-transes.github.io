@@ -107,7 +107,9 @@ if (!isset($_SESSION['peran']) || !in_array($_SESSION['peran'], ['pengguna'])) {
 </div>
 
 <section class="kendaraan">
-    <h2 class="fw-bold" style="color: black;">Pilih jenis kendaraan:</h2>
+    <div class="text-pilih">
+        <h2 class="fw-bold">Pilih jenis kendaraan:</h2>
+    </div>
     <div class="pilih-kendaraan">
         <div class="mobil">
             <img src="../../img/mobil.png">
@@ -119,6 +121,7 @@ if (!isset($_SESSION['peran']) || !in_array($_SESSION['peran'], ['pengguna'])) {
 </section>
 
 <div class="map-cont">
+    <h2 class="fw-bold">Lokasi terkini:</h2>
     <div class="map">
         <div id="map" style="border-radius: 25px; border: black 1px solid;"></div>
     </div>
